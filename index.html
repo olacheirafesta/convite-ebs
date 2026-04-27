@@ -38,7 +38,7 @@
   /* Top brand bar */
   .brand-bar {
     text-align: center;
-    padding: 8px 0 0;
+    padding: 0;
     letter-spacing: 0.4em;
     font-size: 11px;
     color: var(--gold);
@@ -366,7 +366,7 @@
 
   /* Hero */
   .hero {
-    padding: 8px var(--sp-md) 32px;
+    padding: 0 var(--sp-md) 32px;
     background: var(--white);
   }
   .hero-grid {
@@ -664,18 +664,17 @@
 </head>
 <body>
 
-<div class="brand-bar">
-  <img src="https://static.wixstatic.com/media/ab43f7_dcfcecfadc7a49aeaebdafc5710efd2b~mv2.png" alt="Event Business School" class="logo-img">
-</div>
 <style>
-  .brand-bar .logo-img { max-width: 220px; width: 100%; height: auto; display: inline-block; }
-  @media (max-width: 480px) { .brand-bar .logo-img { max-width: 170px; } }
+  .hero-logo { max-width: 130px; width: 100%; height: auto; display: block; margin: 0 0 18px; }
+  @media (max-width: 768px) { .hero-logo { margin: 0 auto 16px; } }
+  @media (max-width: 480px) { .hero-logo { max-width: 110px; } }
 </style>
 
 <!-- ========== HERO ========== -->
 <section class="hero">
   <div class="hero-grid">
     <div>
+      <img src="https://static.wixstatic.com/media/ab43f7_dcfcecfadc7a49aeaebdafc5710efd2b~mv2.png" alt="Event Business School" class="hero-logo">
       <h1>Constrói o teu Negócio<br>de Eventos <em>Único</em></h1>
       <div class="subtitle">Vive de eventos: faz o que gostas,<br>sê bem paga e tem liberdade<br>para decidir o que fazer da tua vida.</div>
     </div>
