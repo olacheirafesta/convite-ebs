@@ -667,67 +667,50 @@
 <body>
 
 <style>
-  .hero-logo { max-width: 130px; width: 100%; height: auto; display: block; margin: 0 0 18px; }
-  @media (max-width: 768px) { .hero-logo { margin: 0 auto 16px; } }
-  @media (max-width: 480px) { .hero-logo { max-width: 110px; } }
+  .hero-v2 { padding: 24px 28px 64px; text-align: center; max-width: 1080px; margin: 0 auto; }
+  .hero-v2 .hero-logo { max-width: 120px; width: 100%; height: auto; display: block; margin: 0 auto 28px; }
+  .hero-v2 h1 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: clamp(36px, 5.5vw, 60px); line-height: 1.1; color: var(--ink); letter-spacing: -0.015em; margin: 0 auto 22px; max-width: 880px; text-align: center !important; }
+  .hero-v2 h1 em { font-style: italic; color: var(--gold); font-weight: 500; }
+  .hero-v2 h1 .tm { font-size: 0.4em; vertical-align: super; font-style: normal; color: var(--gold); margin-left: 2px; }
+  .hero-v2 .hero-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(18px, 2.5vw, 24px); color: var(--gold); margin: 0 auto 56px; max-width: 620px; line-height: 1.5; text-align: center !important; }
+  .jr-label { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 36px; }
+  .jr-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; max-width: 720px; margin: 0 auto 14px; align-items: center; position: relative; }
+  .jr-row::before { content: ''; position: absolute; left: 8%; right: 8%; top: 50%; height: 1px; background: var(--gold-pale); z-index: 0; }
+  .jr-dot { width: 22px; height: 22px; border-radius: 50%; margin: 0 auto; position: relative; z-index: 1; }
+  .jr-dot--1 { background: #EDE8DF; }
+  .jr-dot--2 { background: #C9C0B2; }
+  .jr-dot--3 { background: #9A8E7E; }
+  .jr-dot--4 { background: #5C5752; }
+  .jr-dot--5 { background: #2C2C2C; }
+  .jr-labels { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; max-width: 720px; margin: 0 auto; }
+  .jr-text { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.05em; color: var(--ink); text-align: center; line-height: 1.3; }
+  @media (max-width: 640px) {
+    .hero-v2 { padding: 16px 20px 48px; }
+    .jr-text { font-size: 10px; }
+    .jr-dot { width: 16px; height: 16px; }
+  }
 </style>
 
 <!-- ========== HERO ========== -->
-<section class="hero">
-  <div class="hero-grid">
-    <div>
-      <img src="https://static.wixstatic.com/media/ab43f7_dcfcecfadc7a49aeaebdafc5710efd2b~mv2.png" alt="Event Business School" class="hero-logo">
-      <h1>Constrói o teu Negócio<br>de Eventos <em>Único</em></h1>
-      <div class="subtitle">Vive de eventos: faz o que gostas,<br>sê bem paga e tem liberdade<br>para decidir o que fazer da tua vida.</div>
-    </div>
-    <div>
-      <img class="hero-img" src="https://static.wixstatic.com/media/ab43f7_0fe1784ce5ff4fc796aa00ef744d9d11~mv2.jpg" alt="Adriana Godinho">
-    </div>
-  </div>
-</section>
+<section class="hero-v2">
+  <img src="https://static.wixstatic.com/media/ab43f7_dcfcecfadc7a49aeaebdafc5710efd2b~mv2.png" alt="Event Business School" class="hero-logo">
+  <h1>Constrói o teu<br>Negócio de Eventos <em>Único</em><span class="tm">™</span></h1>
+  <p class="hero-subtitle">Vive de eventos: faz o que gostas, sê bem paga e tem liberdade para decidir o que fazer da tua vida.</p>
 
-<!-- ========== A JORNADA ========== -->
-<section class="section section--cream">
-  <div class="container">
-    <div class="section-label">A Jornada</div>
-    <div class="journey-wrap">
-      <div class="journey-line"></div>
-      <div class="journey-step" style="left:0%;">
-        <div class="journey-label journey-label--top">
-          <div class="journey-num">01</div>
-          <div class="journey-text">Faço eventos</div>
-        </div>
-        <div class="journey-dot"></div>
-      </div>
-      <div class="journey-step" style="left:25%;">
-        <div class="journey-dot"></div>
-        <div class="journey-label journey-label--bottom">
-          <div class="journey-num">02</div>
-          <div class="journey-text">Sou bem paga</div>
-        </div>
-      </div>
-      <div class="journey-step" style="left:50%;">
-        <div class="journey-label journey-label--top">
-          <div class="journey-num">03</div>
-          <div class="journey-text">Destaco-me</div>
-        </div>
-        <div class="journey-dot"></div>
-      </div>
-      <div class="journey-step" style="left:75%;">
-        <div class="journey-dot"></div>
-        <div class="journey-label journey-label--bottom">
-          <div class="journey-num">04</div>
-          <div class="journey-text">Tenho clientes<br>todos os meses</div>
-        </div>
-      </div>
-      <div class="journey-step" style="left:100%;">
-        <div class="journey-label journey-label--top">
-          <div class="journey-num">05</div>
-          <div class="journey-text">Vivo de<br>eventos</div>
-        </div>
-        <div class="journey-dot journey-dot--filled"></div>
-      </div>
-    </div>
+  <div class="jr-label">— A Tua Jornada —</div>
+  <div class="jr-row">
+    <div><div class="jr-dot jr-dot--1"></div></div>
+    <div><div class="jr-dot jr-dot--2"></div></div>
+    <div><div class="jr-dot jr-dot--3"></div></div>
+    <div><div class="jr-dot jr-dot--4"></div></div>
+    <div><div class="jr-dot jr-dot--5"></div></div>
+  </div>
+  <div class="jr-labels">
+    <div class="jr-text">Faço eventos</div>
+    <div class="jr-text">Sou bem paga</div>
+    <div class="jr-text">Destaco-me</div>
+    <div class="jr-text">Clientes todos<br>os meses</div>
+    <div class="jr-text">Vivo de eventos</div>
   </div>
 </section>
 
@@ -1294,7 +1277,8 @@
 <div class="flourish">·  ·  ·</div>
 
 <footer>
-  Event Business School &nbsp;·&nbsp; Adriana Godinho &nbsp;·&nbsp; 2026
+  <img src="https://static.wixstatic.com/media/ab43f7_dcfcecfadc7a49aeaebdafc5710efd2b~mv2.png" alt="Event Business School" style="max-width:110px; height:auto; display:block; margin:0 auto 14px; opacity:0.85;">
+  Adriana Godinho &nbsp;·&nbsp; 2026
 </footer>
 
 </body>
