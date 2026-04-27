@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Business School™ — Convite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --cream: #FAF9F6;
+    --ink: #2C2C2C;
+    --grey: #8A8A8A;
+    --grey-soft: #C5C5C5;
+    --gold: #9A8E7E;
+    --gold-soft: #C9C0B2;
+    --gold-pale: #EDE8DF;
+    --sp-md: 28px;
+    --sp-lg: 48px;
+    --sp-xl: 72px;
+    --sp-2xl: 96px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--white);
+    color: var(--ink);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Top brand bar */
+  .brand-bar {
+    text-align: center;
+    padding: 32px 0 24px;
+    letter-spacing: 0.4em;
+    font-size: 11px;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .brand-bar .divider-line {
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold-soft);
+    vertical-align: middle;
+    margin: 0 12px;
+  }
+
+  /* Sections */
+  .section { padding: var(--sp-xl) var(--sp-md); }
+  .section--cream { background: var(--cream); }
+  .section--white { background: var(--white); }
+  .section--ink { background: var(--ink); color: var(--white); }
+  .container { max-width: 760px; margin: 0 auto; }
+
+  /* Eyebrow / section label */
+  .eyebrow {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 40px;
+    justify-content: center;
+  }
+  .section-label::before,
+  .section-label::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  /* Titles */
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: clamp(32px, 5vw, 44px);
+    line-height: 1.25;
+    text-align: center;
+    color: var(--ink);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+  h1 em, .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+  }
+  .subtitle {
+    text-align: center;
+    font-size: clamp(20px, 3vw, 26px);
+    line-height: 1.5;
+    margin: 0 auto 40px;
+    max-width: 540px;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: clamp(24px, 4vw, 32px);
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .sub-sm {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+  .section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 60px;
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 24px auto 0;
+  }
+
+  p { margin-bottom: 16px; color: var(--ink); }
+  .bold { font-weight: 600; color: var(--ink); }
+  .italic-line {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    padding: 18px 44px;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--white);
+  }
+  .btn:hover { background: var(--gold); border-color: var(--gold); }
+  .btn--light { background: var(--white); color: var(--ink); border-color: var(--white); }
+  .btn--light:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
+
+  /* Divider */
+  .divider {
+    text-align: center;
+    padding: 28px 0;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    letter-spacing: 0.5em;
+    font-weight: 300;
+  }
+
+  /* Quote */
+  .quote {
+    border-left: 2px solid var(--gold);
+    padding: 18px 24px;
+    margin: 28px 0;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(18px, 3vw, 22px);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  /* Scarcity */
+  .scarcity {
+    background: var(--cream);
+    border: 1px solid var(--gold-pale);
+    padding: 32px;
+    margin: 24px 0;
+  }
+  .scarcity-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .scarcity-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.8;
+    margin-bottom: 4px;
+  }
+  .scarcity-text strong { font-weight: 600; }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--gold-pale);
+    margin: 32px 0;
+  }
+  .stat-cell { background: var(--white); padding: 36px; }
+  .stat-cell--cream { background: var(--cream); }
+  .stat-num {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 38px;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  .stat-lbl {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 9px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* Numbered items (Playfair lite style) */
+  .item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    align-items: start;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--gold-pale);
+  }
+  .item:last-child { border-bottom: none; }
+  .item-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--gold);
+    line-height: 1;
+    text-align: right;
+  }
+  .item-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .item-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--grey);
+    line-height: 1.75;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  /* Bullet list */
+  .bullet-list {
+    padding-left: 22px;
+    margin: 16px 0 24px;
+  }
+  .bullet-list li {
+    margin-bottom: 8px;
+    padding-left: 6px;
+    color: var(--ink);
+  }
+  .bullet-list li::marker { color: var(--gold); }
+
+  /* Highlight box */
+  .highlight {
+    background: var(--cream);
+    border: 1px solid var(--gold-pale);
+    padding: 28px;
+    margin: 28px 0;
+  }
+  .highlight p { margin-bottom: 8px; }
+  .highlight p:last-child { margin-bottom: 0; }
+
+  /* Testimonial */
+  .testimonial {
+    background: var(--cream);
+    border: 1px solid var(--gold-pale);
+    padding: 28px;
+    margin: 28px 0;
+  }
+  .testimonial-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .testimonial-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .testimonial img {
+    max-width: 280px;
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid var(--gold-pale);
+    display: block;
+  }
+
+  /* YouTube */
+  .yt-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 24px 0;
+    border: 1px solid var(--gold-pale);
+  }
+  .yt-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* Hero */
+  .hero {
+    padding: var(--sp-xl) var(--sp-md);
+    background: var(--white);
+  }
+  .hero-grid {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .hero h1 { text-align: left; margin-bottom: 16px; }
+  .hero .subtitle { text-align: left; margin: 0; max-width: none; }
+  .hero-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    filter: grayscale(100%);
+  }
+
+  /* Journey */
+  .journey-wrap {
+    position: relative;
+    height: 200px;
+    margin: 48px 0 16px;
+    padding: 0 40px;
+  }
+  .journey-line {
+    position: absolute; top: 50%; left: 0; right: 0;
+    height: 1px; background: var(--ink);
+  }
+  .journey-step {
+    position: absolute; top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .journey-dot {
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    border: 1.5px solid var(--ink);
+    background: var(--cream);
+  }
+  .journey-dot--filled { background: var(--ink); border-color: var(--ink); }
+  .journey-label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  .journey-label--top { bottom: 22px; }
+  .journey-label--bottom { top: 22px; }
+  .journey-num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--gold);
+  }
+  .journey-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    color: var(--ink);
+    margin-top: 2px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Price */
+  .price-big {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: clamp(44px, 8vw, 64px);
+    color: var(--ink);
+    text-align: center;
+    margin: 24px 0 8px;
+    letter-spacing: -0.01em;
+  }
+  .price-detail {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--grey);
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .price-alt {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  /* Diagram & content images */
+  .content-img {
+    width: 100%;
+    max-width: 480px;
+    margin: 24px auto;
+    display: block;
+    border: 1px solid var(--gold-pale);
+  }
+  .content-img--full { max-width: 100%; }
+
+  /* Flourish */
+  .flourish {
+    text-align: center;
+    margin: 60px 0 0;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    letter-spacing: 0.5em;
+    font-weight: 300;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 60px 28px 40px;
+    color: var(--grey-soft);
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: var(--sp-lg);
+    font-weight: 400;
+  }
+
+  /* CTA dark */
+  .cta-dark { text-align: center; }
+  .cta-dark h1 { color: var(--white); }
+  .cta-dark p { color: var(--white); }
+  .cta-dark .section-label { color: var(--gold-soft); }
+  .cta-dark .section-label::before,
+  .cta-dark .section-label::after { background: var(--gold-soft); }
+
+  .signature {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 24px;
+    color: var(--ink);
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  /* Logotype — "EVENT BUSINESS School" wordmark */
+  .logotype {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    line-height: 1;
+  }
+  .logotype-stack {
+    display: inline-flex;
+    flex-direction: column;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    text-transform: uppercase;
+    line-height: 1.05;
+  }
+  .logotype-script {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 36px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  @media (max-width: 480px) {
+    .logotype-stack { font-size: 14px; }
+    .logotype-script { font-size: 28px; }
+  }
+
+  /* LETTER MODE — tudo à esquerda, espaçamento de carta */
+  .section { padding: 48px var(--sp-md); }
+  body h1, body h2, body .subtitle, body .sub-sm, body .section-title,
+  body .section-label, body p, body .signature { text-align: left !important; }
+  .section-label { justify-content: flex-start !important; margin-bottom: 22px; }
+  .section-label::after { display: none !important; }
+  .section-title::after { margin: 20px 0 0; }
+  h1 { margin-bottom: 12px; }
+  .subtitle { margin: 0 0 24px; max-width: none; }
+  p { margin-bottom: 12px; }
+  .item { padding: 18px 0; }
+  .quote { margin: 18px 0; }
+  .highlight, .scarcity { margin: 20px 0; }
+  .stats-row { margin: 24px 0; }
+  .flourish { margin: 32px 0 0; font-size: 16px; }
+
+  /* Testimonial — sem caixa, inline na carta */
+  .testimonial {
+    background: transparent;
+    border: none;
+    border-left: 2px solid var(--gold);
+    padding: 4px 0 4px 20px;
+    margin: 24px 0;
+  }
+  .testimonial img {
+    max-width: 220px;
+    margin-top: 14px;
+    border: 1px solid var(--gold-pale);
+  }
+
+  /* Highlight — também sem caixa, mais leve */
+  .highlight {
+    background: transparent;
+    border: none;
+    border-top: 1px solid var(--gold-pale);
+    border-bottom: 1px solid var(--gold-pale);
+    padding: 18px 0;
+    margin: 22px 0;
+  }
+
+  /* Imagens — pequenas, alinhadas à esquerda */
+  .content-img { max-width: 260px; margin: 14px 0; }
+  .content-img--full { max-width: 260px; }
+
+  /* CTA dark mantém centrado */
+  .cta-dark .section-label { justify-content: center !important; }
+  .cta-dark .section-label::before { display: none; }
+  .cta-dark h1, .cta-dark p, .cta-dark .section-label { text-align: center !important; }
+
+  /* Hero mantém alinhamento próprio */
+  .hero h1, .hero .subtitle { text-align: left !important; }
+
+  /* Check / cross lists */
+  .check-list .item-number,
+  .cross-list .item-number {
+    font-family: inherit;
+    font-style: normal;
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .cross-list .item-number { color: #C75A4A; }
+  .check-list .item-number { color: #6B8E5A; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .section { padding: 56px 22px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+    .hero h1, .hero .subtitle { text-align: center; }
+    .hero-img { max-height: 380px; }
+    .item { grid-template-columns: 56px 1fr; gap: 18px; }
+    .item-number { font-size: 36px; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .stats-row { grid-template-columns: 1fr; }
+    .stat-num { font-size: 30px; }
+    .stat-cell { padding: 24px 20px; }
+  }
+
+  /* Journey — vertical no mobile */
+  @media (max-width: 640px) {
+    .journey-wrap {
+      height: auto;
+      padding: 0 0 0 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .journey-line {
+      top: 0; bottom: 0; left: 16px; right: auto;
+      width: 1px; height: auto;
+    }
+    .journey-step {
+      position: relative;
+      left: 0 !important;
+      top: auto;
+      transform: none;
+      text-align: left;
+      padding-left: 24px;
+    }
+    .journey-step .journey-dot {
+      position: absolute;
+      left: -16px;
+      top: 6px;
+      transform: translateX(-50%);
+    }
+    .journey-label,
+    .journey-label--top,
+    .journey-label--bottom {
+      position: static;
+      transform: none;
+      white-space: normal;
+      margin: 0;
+    }
+    .journey-text br { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="brand-bar">
+  <img src="https://static.wixstatic.com/media/ab43f7_dcfcecfadc7a49aeaebdafc5710efd2b~mv2.png" alt="Event Business School" class="logo-img">
+</div>
+<style>
+  .brand-bar .logo-img { max-width: 220px; width: 100%; height: auto; display: inline-block; }
+  @media (max-width: 480px) { .brand-bar .logo-img { max-width: 170px; } }
+</style>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <h1>Constrói o teu Negócio<br>de Eventos <em>Único</em></h1>
+      <div class="subtitle">Vive de eventos: faz o que gostas,<br>sê bem paga e tem liberdade<br>para decidir o que fazer da tua vida.</div>
+    </div>
+    <div>
+      <img class="hero-img" src="https://static.wixstatic.com/media/ab43f7_0fe1784ce5ff4fc796aa00ef744d9d11~mv2.jpg" alt="Adriana Godinho">
+    </div>
+  </div>
+</section>
+
+<!-- ========== A JORNADA ========== -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-label">A Jornada</div>
+    <div class="journey-wrap">
+      <div class="journey-line"></div>
+      <div class="journey-step" style="left:0%;">
+        <div class="journey-label journey-label--top">
+          <div class="journey-num">01</div>
+          <div class="journey-text">Faço eventos</div>
+        </div>
+        <div class="journey-dot"></div>
+      </div>
+      <div class="journey-step" style="left:25%;">
+        <div class="journey-dot"></div>
+        <div class="journey-label journey-label--bottom">
+          <div class="journey-num">02</div>
+          <div class="journey-text">Sou bem paga</div>
+        </div>
+      </div>
+      <div class="journey-step" style="left:50%;">
+        <div class="journey-label journey-label--top">
+          <div class="journey-num">03</div>
+          <div class="journey-text">Destaco-me</div>
+        </div>
+        <div class="journey-dot"></div>
+      </div>
+      <div class="journey-step" style="left:75%;">
+        <div class="journey-dot"></div>
+        <div class="journey-label journey-label--bottom">
+          <div class="journey-num">04</div>
+          <div class="journey-text">Tenho clientes<br>todos os meses</div>
+        </div>
+      </div>
+      <div class="journey-step" style="left:100%;">
+        <div class="journey-label journey-label--top">
+          <div class="journey-num">05</div>
+          <div class="journey-text">Vivo de<br>eventos</div>
+        </div>
+        <div class="journey-dot journey-dot--filled"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== SCARCITY ========== -->
+<section class="section section--white">
+  <div class="container">
+    <div class="scarcity">
+      <div class="scarcity-title">5 vagas para Maio</div>
+      <div class="scarcity-text">Nós só abrimos um número de vagas limitadas a cada mês.</div>
+      <div class="scarcity-text">As nossas portas vão abrir para candidaturas <strong>dia 28 de Abril</strong>.</div>
+      <div class="scarcity-text">Começamos na <strong>terça-feira, 5 de Maio</strong>.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== A MUDANÇA ========== -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-label">A Mudança</div>
+    <h1>O mercado de eventos cresceu...</h1>
+    <div class="subtitle">e isso muda <em>tudo</em>.</div>
+
+    <p>Nos últimos anos, o mercado de eventos em Portugal explodiu. De 200 milhões para 800 milhões de euros.</p>
+    <p>Depois da pandemia, as pessoas querem celebrar a vida juntas, em carne e osso. E com o aparecimento da inteligência artificial no dia-a-dia, as experiências reais, presenciais, tornaram-se ainda mais valiosas.</p>
+    <p>Com as redes sociais, toda a gente quer partilhar esses momentos bonitos online. A juntar a isto, o aumento do turismo tornou Portugal um destino de referência mundial. Lisboa foi eleita, pela terceira vez, Melhor Destino da Europa para congressos e eventos nos World MICE Awards 2025. Ou seja, há cada vez mais eventos internacionais em Portugal.</p>
+    <p>E tudo isto gera uma grande oportunidade para quem está ou quer entrar no mundo dos eventos.</p>
+    <p>A questão é... também há cada vez mais pessoas a entrar neste mundo. Logo, a concorrência aumenta.</p>
+    <p>Há uns anos, bastava teres um Instagram bonito, umas fotos de flores e uns arcos de balões, e apareciam clientes. Em 2026, isso já não chega.</p>
+    <p>Quando a procura aumenta, a oferta também aumenta. E quem está a vencer no mundo dos eventos hoje é quem tem um negócio diferenciado, construído com muita clareza e uma entrega de alta qualidade. E tem um sistema que atrai interessados e os transforma em clientes constantemente, sem depender do boca a boca ou da época do ano.</p>
+    <p class="bold">Isto é o que eu chamo um Negócio de Eventos Único (NEU™).</p>
+    <p>A boa notícia? <span class="bold">Não precisas de inventar a roda.</span></p>
+    <p>Criei o meu próprio Negócio de Eventos Único há mais de 10 anos. Nos últimos 5, ajudei mais de 300 profissionais a fazerem o mesmo.</p>
+    <p>E é exactamente isto que estou a ajudar profissionais de eventos a construir dentro da Event Business School.</p>
+    <p>Este é o meu convite para te juntares a nós.</p>
+    <div class="signature">— Adriana</div>
+  </div>
+</section>
+
+
+<!-- ========== IDENTITY FORK ========== -->
+<section class="section section--white">
+  <div class="container">
+    <p class="italic-line">Tenho duas perguntas para ti...</p>
+    <p>Em 2026, queres ser só mais uma no mundo dos eventos?</p>
+    <p>Igual às outras.</p>
+    <p>Com meses fracos, outros fortes. Constantemente a ter de justificar o seu preço e a correr atrás dos clientes.</p>
+    <p>E no final do mês, mata-se a trabalhar para quase nada.</p>
+    <p>Ou queres ser a profissional que escolhe os clientes?</p>
+    <p>Que é bem paga, reconhecida e valorizada pelo seu trabalho de qualidade?</p>
+    <p>Que tem um negócio que lhe permite divertir-se a fazer o que mais gosta e impactar o dia mais especial da vida de alguém com os seus eventos?</p>
+    <p class="bold">Se é a segunda, dá-me 5 minutos. Não te vais arrepender de ler isto.</p>
+    <p>Eu própria construí o meu negócio de eventos há 10 anos e fui de eventos de 300€ a eventos de 50.000€.</p>
+    <p>Nos últimos 5 anos ajudei mais de 300 empreendedoras a tornarem-se Profissionais de Organização e Decoração de Eventos (PODE) e a criarem o seu próprio Negócio de Eventos Único.</p>
+    <p>Passei os últimos anos a testar, a refinar e a implementar um método que funciona para profissionais de eventos em qualquer fase e qualquer área.</p>
+    <p>E estou à procura de uma pessoa muito específica para trabalhar comigo...</p>
+
+    <div class="stats-row">
+      <div class="stat-cell">
+        <div class="stat-num">+300</div>
+        <div class="stat-lbl">Profissionais Acompanhadas</div>
+      </div>
+      <div class="stat-cell stat-cell--cream">
+        <div class="stat-num">300 → 50K</div>
+        <div class="stat-lbl">De 300€ a 50.000€ por evento</div>
+      </div>
+      <div class="stat-cell stat-cell--cream">
+        <div class="stat-num">+13</div>
+        <div class="stat-lbl">Anos de Empreendedorismo</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">+10</div>
+        <div class="stat-lbl">Anos no Negócio de Eventos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== O OBJECTIVO ========== -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-label">O Objectivo</div>
+    <div class="highlight">
+      <p class="bold" style="font-size:17px;">Ajudar-te a construir o teu Negócio de Eventos Único™</p>
+      <p>Que te permite ser bem paga, reconhecida e valorizada pelo teu trabalho, com clientes todos os meses.</p>
+      <p>Sem ter de justificar o preço.</p>
+      <p>Sem correr atrás de clientes.</p>
+      <p>Sem meses fracos.</p>
+      <p>Sem te matares a trabalhar.</p>
+      <p class="bold">Mais clientes ideais. Mais dinheiro. Mais estabilidade. Mais diversão.</p>
+    </div>
+
+    <p>Se és profissional na área dos eventos, já fazes eventos (ou estás pronta para começar a sério) e isto soa exactamente ao que pretendes... estás no sítio certo.</p>
+    <p>E vamos ser honestas.</p>
+    <p>Tu não queres um negócio gigante.</p>
+    <p class="bold">Tu queres uma vida gigante... com um negócio que a financie.</p>
+    <p>Então vamos construí-lo juntas em 2026... Bora?</p>
+  </div>
+</section>
+
+
+<!-- ========== O PROBLEMA ========== -->
+<section class="section section--white">
+  <div class="container">
+    <div class="section-label">O Problema</div>
+    <h1>O mercado está cheio de profissionais</h1>
+    <div class="subtitle">a fazer <em>a mesma coisa</em>.</div>
+
+    <p>Vamos chamar as coisas pelo nome.</p>
+    <p>O mercado de eventos cresceu. Mais celebrações, mais turismo, mais oportunidades. E ainda assim, a maioria das profissionais sente o oposto: meses fracos, propostas sem resposta, clientes que comparam só preço.</p>
+    <p class="bold">A culpa não é do mercado. São 5 sinais de que ainda não tens um negócio de eventos:</p>
+
+    <ul class="bullet-list red-flags">
+      <li>🚩 As pessoas perguntam-te: "mas afinal, o que é que tu fazes?"</li>
+      <li>🚩 Os clientes dizem "é caro" — ou pedem-te para baixar o preço.</li>
+      <li>🚩 Não tens pedidos novos todos os dias.</li>
+      <li>🚩 Não tens clientes todos os meses.</li>
+      <li>🚩 Não tens recomendações constantes do teu trabalho.</li>
+    </ul>
+    <style>.red-flags { list-style: none; padding-left: 0; } .red-flags li { padding-left: 0; }</style>
+
+    <p>Se te identificaste, não estás sozinha. Mas também não estás a Viver de Eventos — estás a Sobreviver de Eventos.</p>
+    <p>E o pior conselho que te podem dar é o que toda a gente ouve: <span class="bold">"tens de fazer mais eventos."</span></p>
+
+    <div class="quote">Mais não é a resposta. É o problema.</div>
+
+    <p>Não estamos numa crise de clientes. Clientes há muitos.</p>
+    <p class="bold" style="font-size:17px;">Estamos numa crise de diferenciação.</p>
+    <p>O mercado está cheio de gente que faz eventos. E vazio de profissionais com um negócio único.</p>
+
+    <div class="quote">O mercado não é sazonal. Quem não tem um negócio que funciona, é que acha que é.</div>
+
+    <p class="bold">A oportunidade é clara...</p>
+  </div>
+</section>
+
+
+<!-- ========== A OPORTUNIDADE ========== -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-label">A Oportunidade</div>
+    <h1>O Negócio de Eventos <em>Único</em></h1>
+    <div class="sub-sm" style="text-align:center;">(NEU™)</div>
+
+    <p>Lembras-te do que disse no início?</p>
+    <p>O mercado de eventos em Portugal passou de 200 milhões para 800 milhões. Mais pessoas a querer celebrar. Mais turismo. Mais eventos internacionais. Lisboa premiada como melhor destino da Europa para eventos.</p>
+    <p>A oportunidade é gigante.</p>
+    <p>Mas não é para toda a gente.</p>
+    <p>Não vai ser para quem faz mais eventos. Nem para quem tem mais material. Nem para quem cobra mais barato.</p>
+    <p class="bold">A próxima geração de profissionais de eventos de sucesso vai ser quem constrói o seu NEU™.</p>
+    <p>Um negócio com um serviço próprio que ninguém consegue copiar. Com um preço justo e definido, que não precisa de justificação. Com uma estratégia que traz interessados todos os meses, sem depender da sorte. E com um processo de vendas que transforma interessados em clientes, na conversa, sem emails perdidos.</p>
+    <p class="bold">Isto é o que eu chamo um NEU™ (Negócio de Eventos Único).</p>
+    <p>E é exactamente o que construímos dentro da Event Business School.</p>
+    <p>Já validámos este modelo com mais de 300 profissionais. Empreendedoras que saíram de empregos, que duplicaram os seus preços, que passaram de sobreviver a viver de eventos.</p>
+    <p class="bold">Em 2026, podes ser tu a próxima.</p>
+    <p>Mas, como disse, estou à procura de uma pessoa muito específica...</p>
+  </div>
+</section>
+
+
+<!-- ========== NÃO É PARA TI ========== -->
+<section class="section section--white">
+  <div class="container">
+    <div class="eyebrow">— Lê isto com atenção —</div>
+    <h1>A EBS não é para ti se</h1>
+    <p style="max-width:540px; color:var(--grey);">A Event Business School não é para toda a gente. Só trabalho com profissionais que levam isto a sério.</p>
+
+    <div class="cross-list">
+      <div class="item">
+        <div class="item-number">❌</div>
+        <div class="item-content">
+          <h3>Se és iniciante</h3>
+          <p>Se estás a começar e ainda não tens clientes. A EBS é para quem já faz eventos (ou está pronta para começar a sério).</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-number">❌</div>
+        <div class="item-content">
+          <h3>Se queres sucesso da noite para o dia</h3>
+          <p>Aqui jogas o jogo do longo prazo, com pessoas comprometidas a longo prazo. O nosso lema é fazer até dar certo. Se preferes "tentar" e depois arranjar desculpas, a EBS não te vai servir.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-number">❌</div>
+        <div class="item-content">
+          <h3>Se queres uma babysitter</h3>
+          <p>Se queres alguém para te ver o trabalho de casa, segurar na tua mão ou fazer o trabalho por ti — não é aqui.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-number">❌</div>
+        <div class="item-content">
+          <h3>Se não assumes responsabilidade</h3>
+          <p>A culpa é sempre dos outros: do mercado, dos clientes, da concorrência. Se nunca és tu o problema, também não vais ser tu a solução.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-number">❌</div>
+        <div class="item-content">
+          <h3>Se gostas de caos</h3>
+          <p>Se queres mais clientes, mais eventos, mais trabalho e competir pelo preço mais baixo, definitivamente isto não é para ti. Se a tua estratégia é ser a mais barata, não somos o lugar certo.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-number">❌</div>
+        <div class="item-content">
+          <h3>Não estás disposta a investir em ti</h3>
+          <p>Se achas que primeiro precisas de mais material, mais uma formação técnica ou mais equipamento antes de aprenderes a gerir o teu negócio — ainda não é a tua altura.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== É PARA TI ========== -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="eyebrow">— É para ti se —</div>
+    <h1>A EBS é <em>para ti</em></h1>
+
+    <div class="check-list">
+      <div class="item">
+        <div class="item-number">✅</div>
+        <div class="item-content">
+          <h3>Já fazes eventos (ou estás pronta para começar a sério)</h3>
+          <p>Não procuras mais um curso. Procuras um negócio.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-number">✅</div>
+        <div class="item-content">
+          <h3>Queres ser bem paga, reconhecida e valorizada</h3>
+          <p>Cobrar o teu Preço Justo e atrair clientes que escolhem qualidade, não preço.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-number">✅</div>
+        <div class="item-content">
+          <h3>Queres clientes todos os meses</h3>
+          <p>Uma estratégia que funciona o ano todo, sem depender do boca a boca, de feiras ou da sorte.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-number">✅</div>
+        <div class="item-content">
+          <h3>Queres construir algo teu</h3>
+          <p>O teu serviço, o teu método, o teu diferencial. Não uma cópia do que toda a gente faz.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-number">✅</div>
+        <div class="item-content">
+          <h3>Queres que o negócio financie a tua vida</h3>
+          <p>Não o contrário. Liberdade de tempo, liberdade de escolha, liberdade de ser mãe, de viajar, de viver.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-number">✅</div>
+        <div class="item-content">
+          <h3>Estás farta de fazer tudo sozinha</h3>
+          <p>E queres acompanhamento, comunidade e alguém que já fez o caminho.</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:40px;">Se leste isto e sentiste a chamada... óptimo.</p>
+    <p class="bold">Se leste isto e te sentiste vista... bem-vinda.</p>
+    <p>Aqui está o que vamos fazer...</p>
+  </div>
+</section>
+
+
+<!-- ========== O PLANO ========== -->
+<section class="section section--white">
+  <div class="container">
+    <div class="section-label">O Plano</div>
+    <h1>O que vamos construir <em>juntas</em></h1>
+    <div class="subtitle">nos próximos 12 meses.</div>
+    <p>O plano é simples (como vais ver... esse é o tema).</p>
+
+    <!-- FASE 1 -->
+    <div style="margin-top:48px;">
+      <h2>Fase 1 — Impactar</h2>
+      <div class="sub-sm">(Meses 1-4)</div>
+      <div class="quote">A Fundação</div>
+
+      <p>Antes de construir um negócio, precisas de saber que vida queres ter. Porque o negócio serve a vida, não o contrário.</p>
+      <p>Os primeiros 4 meses são sobre três coisas:</p>
+
+      <div class="item">
+        <div class="item-number">01</div>
+        <div class="item-content"><h3>A tua vida</h3><p>Vamos desenhar o negócio à volta da vida que queres viver, não ao contrário.</p></div>
+      </div>
+      <div class="item">
+        <div class="item-number">02</div>
+        <div class="item-content"><h3>O teu serviço</h3><p>Com uma clareza que nunca tiveste. Acabou o "faço um bocadinho de tudo".</p></div>
+      </div>
+      <div class="item">
+        <div class="item-number">03</div>
+        <div class="item-content"><h3>O teu preço</h3><p>Saber exactamente quanto cobras. Sem medo, sem comparação, sem inventar para cada cliente. O teu Preço Justo, definido por ti, que te permite verdadeiramente viver do que gostas e sabes fazer sem que tenhas de fazer 20 eventos por mês.</p></div>
+      </div>
+
+      <p style="margin-top:24px;">Sais desta fase com o teu negócio montado. Não no papel. Na prática.</p>
+      <p class="bold">Vamos construir:</p>
+      <ul class="bullet-list">
+        <li>O Teu Plano de Vida</li>
+        <li>O Teu Serviço Único™</li>
+        <li>O Teu Preço Justo™</li>
+        <li>O Teu Método Único™</li>
+      </ul>
+
+      <div class="highlight">
+        <p class="bold">Retorno rápido</p>
+        <p>O objectivo é que o teu investimento na EBS se pague o mais rápido possível. Muitas empreendedoras fecham o primeiro cliente com o novo Preço Justo ainda na Fase 1. Um único evento bem precificado pode pagar a EBS inteira.</p>
+      </div>
+
+      <div class="testimonial">
+        <div class="testimonial-name">Letícia — Wedding Planner</div>
+        <div class="testimonial-text">A Letícia fazia eventos a 500€. Sem mudar o tipo de eventos que fazia, passou a cobrar 2.500€. O mesmo serviço, 5x mais valor. Hoje cobra 3.000€ só pela organização.</div>
+      </div>
+      <img src="https://static.wixstatic.com/media/ab43f7_7e925af62e254136a2ee938c6ef2002e~mv2.jpeg" alt="Print Letícia — 3.000€ só pela organização" class="content-img">
+    </div>
+
+    <!-- FASE 2 -->
+    <div style="margin-top:64px;">
+      <h2>Fase 2 — Destacar &amp; Encantar</h2>
+      <div class="sub-sm">(Meses 4-8)</div>
+      <div class="quote">O Palco</div>
+
+      <p>Tens o serviço. Tens o preço. Tens o método. Agora é altura de o mundo te ver.</p>
+      <p>Esta fase é sobre duas coisas: <span class="bold">saberes o que te torna única</span> e <span class="bold">fazeres com que te encontrem.</span></p>
+      <p class="bold">Até agora estavas nos bastidores. Agora sobes ao teu palco.</p>
+
+      <p class="bold">Vamos construir:</p>
+      <ul class="bullet-list">
+        <li>O Teu Diferencial Único™ — porquê tu e não a concorrência</li>
+        <li>O Teu PCI™ — o perfil exacto dos clientes que queres atrair</li>
+        <li>O Teu Mapa de Comunicação — como revelas ao mundo o teu Serviço Diferencial Único™</li>
+        <li>O Teu Sistema ITM™ (Interessados Todos os Meses):
+          <ul class="bullet-list" style="margin-top:8px;">
+            <li>A tua estratégia</li>
+            <li>A tua comunicação</li>
+            <li>Os canais de comunicação</li>
+            <li>Tudo a funcionar automaticamente, enquanto fazes o que de facto gostas</li>
+          </ul>
+        </li>
+      </ul>
+
+      <p class="bold">Resultado: interessados qualificados todos os meses. Sem boca a boca. Sem feiras. Sem Casamentos.pt. Sem depender de ninguém.</p>
+
+      <div class="testimonial">
+        <div class="testimonial-name">Isabel — Espaço de Eventos</div>
+        <div class="testimonial-text">A Isabel tinha um espaço de eventos que quase não dava dinheiro. Quando definiu o seu cliente ideal e começou a comunicar para as pessoas certas, tudo mudou. Hoje tem o espaço cheio e a agenda preenchida.</div>
+      </div>
+      <!-- ATENÇÃO: fazer crop ao número de telemóvel antes de publicar no Wix -->
+      <img src="https://static.wixstatic.com/media/ab43f7_ce3b4f3929f14a1983592d7fc98143d4~mv2.png" alt="Print Isabel — os nossos santos bateram" class="content-img">
+    </div>
+
+    <!-- FASE 3 -->
+    <div style="margin-top:64px;">
+      <h2>Fase 3 — Oferecer</h2>
+      <div class="sub-sm">(Meses 9-12)</div>
+      <div class="quote">A Agenda Perfeita</div>
+
+      <p>Tens o serviço, tens o preço, tens interessados a chegar todos os meses. Agora vamos garantir que cada conversa se transforma no cliente certo, no dia certo, ao preço certo.</p>
+      <p>Abres a tua agenda e vês exactamente o que sempre quiseste: os eventos que escolheste, com os clientes que adoras, nos dias que te fazem sentido, ao preço que mereces.</p>
+
+      <p class="bold">Vamos construir:</p>
+      <ul class="bullet-list">
+        <li>O teu Guião de Reunião™ — como conduzir a conversa para que o cliente diga sim ao teu serviço, antes de orçamentares o que quer que seja</li>
+        <li>A tua Proposta Irresistível™ — como apresentar e fechar, ao vivo, não por email</li>
+        <li>O teu processo de follow-up — nunca mais ficas à espera de uma resposta que não vem</li>
+        <li>Os teus sistemas e ferramentas — IA, automações, templates que te poupam horas</li>
+      </ul>
+
+      <p class="bold">Resultado: vendas previsíveis. Processo repetível. Clientes que te escolhem a ti. A agenda que sempre sonhaste.</p>
+
+      <div class="testimonial">
+        <div class="testimonial-name">Letícia — Wedding Planner</div>
+        <div class="testimonial-text">A Letícia hoje tem eventos reservados com 2 anos de antecedência. Isto é a Agenda Perfeita em acção.</div>
+      </div>
+
+      <div class="testimonial">
+        <div class="testimonial-name">Empreendedora EBS</div>
+        <div class="testimonial-text">Não só fechou a cliente como a cliente voltou a contratá-la no ano seguinte. Quando o processo está montado, os clientes não desaparecem. Voltam.</div>
+        <img src="https://static.wixstatic.com/media/ab43f7_5ec50950725a475fa4d316b7c6222b8f~mv2.jpeg" alt="Print do testemunho — 2 anos de antecedência">
+      </div>
+    </div>
+
+    <!-- FASE 4 -->
+    <div style="margin-top:64px;">
+      <h2>Fase 4 — O Próximo Nível</h2>
+      <div class="sub-sm">(Contínua — enquanto estiveres na EBS)</div>
+      <div class="quote">Crescer com clareza</div>
+
+      <p>O teu NEU™ está montado. Tens serviço, preço, clientes e processo. Tudo funciona.</p>
+      <p>E agora? Agora é onde a maioria pára. Mas tu não.</p>
+      <p>Porque há sempre um próximo nível. Mais liberdade. Mais impacto. Mais diversão. Eventos maiores. Preços mais altos. Mais tempo para ti.</p>
+      <p class="bold">Não estás sozinha nisto. Todos os meses, estou contigo.</p>
+
+      <p class="bold">O que tens acesso contínuo:</p>
+      <ul class="bullet-list">
+        <li><strong>Workshop mensal ao vivo</strong> — todas as últimas quartas-feiras, 13h30. Temas práticos, implementação imediata.</li>
+        <li><strong>Aulas semanais ao vivo</strong> — terças às 10h. Dúvidas, implementação, feedback. Sou eu, não uma assistente ou IA.</li>
+        <li><strong>Comunidade privada</strong> — a tua rede de profissionais que estão no mesmo caminho. Nunca mais decides sozinha.</li>
+        <li><strong>Chat de acesso directo à Adriana</strong> — para validar decisões, tirar dúvidas, ou simplesmente dizer "estou presa, ajuda-me."</li>
+        <li><strong>Gravações e recursos</strong> — tudo gravado. Modelos, checklists, processos. Para download.</li>
+      </ul>
+
+      <div class="highlight">
+        <p class="bold">Revisão trimestral</p>
+        <p>A cada 3 meses, olhamos juntas para o teu negócio e definimos:</p>
+        <p><span class="bold">UMA coisa para melhorar</span> — o que já funciona mas pode ser melhor.</p>
+        <p><span class="bold">UMA coisa para crescer</span> — o próximo passo para o teu negócio ficar maior.</p>
+        <p class="bold">Clareza. Foco. Sem dispersar.</p>
+      </div>
+
+      <img src="https://static.wixstatic.com/media/ab43f7_f493b40075c946f7a5ef87e22354c104~mv2.jpg" alt="Comunidade EBS" class="content-img">
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== COMO FUNCIONA ========== -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-label">Como Funciona</div>
+    <h1>Não é mais um curso com</h1>
+    <div class="subtitle">200 vídeos que ficam <em>por ver</em>.</div>
+
+    <p>É um sistema simples com uma cadência clara:</p>
+
+    <p><span class="bold">Todas as semanas:</span><br>Uma aula ao vivo comigo, terça às 10h. Não é teoria. Chegas, implementas, sais com algo feito. Tudo fica gravado.</p>
+    <p><span class="bold">Todos os meses:</span><br>Um workshop prático ao vivo na última quarta-feira, 13h30. Um tema. Uma implementação. Um resultado.</p>
+    <p><span class="bold">Todos os dias:</span><br>A comunidade no Circle. Perguntas, partilhas, apoio. Nunca mais tomas decisões sozinha.</p>
+    <p><span class="bold">Quando precisares:</span><br>Acesso directo a mim. Não a uma assistente, não a um chatbot. A mim. Para validar, desbloquear ou simplesmente dizer "estou perdida, ajuda."</p>
+    <p><span class="bold">Ao teu ritmo:</span><br>Tudo gravado. Templates, checklists, frameworks. Os 4 Blueprints (Um Único Serviço™, Um Único Diferencial™, Uma Única Estratégia™, Um Único Processo™) estão lá para quando precisares deles.</p>
+
+    <div class="highlight" style="text-align:center;">
+      <p class="bold">É assim tão simples?</p>
+      <p>Sim. Terça de manhã tens a aula. Durante a semana implementas. A comunidade apoia-te. No final do mês, o workshop aprofunda. E eu estou cá para o resto.</p>
+      <p>Sem 17 calls por semana. Sem plataformas complicadas. Sem te sentires perdida num mar de conteúdo.</p>
+      <p class="bold">Uma aula. Uma comunidade. Uma mentora. Fazer até dar certo.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== INVESTIMENTO ========== -->
+<section class="section section--white">
+  <div class="container">
+    <div class="section-label">Investimento</div>
+    <h1>Event Business School™</h1>
+    <p style="text-align:center; max-width:540px; margin:0 auto 24px; color:var(--grey);">O objectivo é simples: que o teu investimento se pague com os teus primeiros clientes ao Preço Justo.</p>
+
+    <div class="price-big">500€<span style="font-size:0.4em; color:var(--grey);">/mês</span></div>
+    <div class="price-detail">12 meses · Acesso completo a tudo</div>
+    <div class="price-alt">(ou podes pagar de uma vez e fica 5.000€)</div>
+
+    <p style="text-align:center;">Depois dos 12 meses, continuamos mês a mês enquanto estiveres a crescer.</p>
+
+    <img src="https://static.wixstatic.com/media/ab43f7_791bd79a38f84360bc70de8e224872b3~mv2.png" alt="Stripe" class="content-img" style="max-width:280px;">
+
+    <p style="text-align:center; font-size:13px; color:var(--grey);">Pagamento seguro via Stripe · Acesso imediato.</p>
+  </div>
+</section>
+
+
+<!-- ========== FAQS ========== -->
+<section class="section section--white">
+  <div class="container">
+    <div class="section-label">Perguntas Frequentes</div>
+    <h1>Tudo o que <em>precisas</em></h1>
+    <div class="subtitle">de saber.</div>
+
+    <p class="bold" style="margin-top:32px;">Para quem é a EBS?</p>
+    <p>Para profissionais de eventos (ou aspirantes a sério) que querem construir um negócio único com método, preço justo e previsibilidade. Não é para quem quer atalhos.</p>
+
+    <p class="bold">Quanto tempo demora a ver resultados?</p>
+    <p>Depende de ti, mas muitas empreendedoras fecham o primeiro cliente com o novo preço nos primeiros meses. A Isabel teve o seu primeiro cliente a cobrar 10x em 2 meses.</p>
+
+    <p class="bold">Como funciona na prática? O que recebo?</p>
+    <p>Aulas ao vivo às terças às 10h, comunidade privada, 4 Passos, workshops mensais, acesso directo à Adriana, tudo gravado. Se não leste o que está acima... volta atrás.</p>
+
+    <p class="bold">Vou ter as minhas dúvidas respondidas?</p>
+    <p>Sim. Não é um daqueles programas onde ficas sozinha. Tens acesso directo a mim. Perguntas na comunidade, nas aulas ao vivo, ou por mensagem. Sou eu que respondo, não uma assistente.</p>
+
+    <p class="bold">E se já fui enganada por outros cursos?</p>
+    <p>Percebo. A maioria dos cursos ensina-te a fazer eventos. A EBS ensina-te a construir um negócio de eventos. É a diferença entre saber decorar uma mesa, ou tirar fotografias, e saber cobrar 5.000€ por um evento. Mas também, se a culpa é sempre dos outros, vai ser difícil vencer em qualquer lado.</p>
+
+    <p class="bold">Há garantia?</p>
+    <p>Não. Se não fizeres o trabalho, não vais ter resultados. Essa é a garantia. Não faço promessas ridículas. Faço um compromisso: se aplicares o método, os resultados aparecem. Sempre apareceram para quem faz até dar certo.</p>
+  </div>
+</section>
+
+
+<!-- ========== RESULTADOS REAIS ========== -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-label">Resultados Reais</div>
+    <h1>Histórias de quem já</h1>
+    <div class="subtitle">transformou <em>o negócio</em>.</div>
+
+    <p class="bold">Letícia — Wedding Planner</p>
+    <p>Despedida com salários em atraso. Construiu o negócio do zero. De eventos de 500€ para 2.500€ sem mudar o tipo de eventos. Hoje cobra 3.000€ só pela organização e tem eventos reservados com 2 anos de antecedência.</p>
+    <div class="yt-embed"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen src="https://www.youtube-nocookie.com/embed/QeSIdtPzLDw" allowfullscreen></iframe></div>
+
+    <p class="bold" style="margin-top:32px;">Clara — Organizadora de Eventos</p>
+    <p>Trabalhava numa ótica. Despediu-se em janeiro. Em setembro já estava a fazer um evento de 20.000 euros.</p>
+    <div class="yt-embed"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen src="https://www.youtube-nocookie.com/embed/wTwvPFuufpc" allowfullscreen></iframe></div>
+
+    <p class="bold" style="margin-top:32px;">Susana — Catering</p>
+    <p>Perdeu o emprego numa fábrica. Criou negócio de catering do zero. Hoje organiza eventos para 700 a 900 pessoas.</p>
+    <div class="yt-embed"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen src="https://www.youtube-nocookie.com/embed/zPhPzpmC0bI" allowfullscreen></iframe></div>
+  </div>
+</section>
+
+<!-- ========== SCARCITY 2 ========== -->
+<section class="section section--white">
+  <div class="container">
+    <div class="scarcity">
+      <div class="scarcity-title">5 vagas para Maio</div>
+      <div class="scarcity-text">Nós abrimos um número mínimo de vagas limitadas a cada mês.</div>
+      <div class="scarcity-text">As nossas portas vão abrir para candidaturas <strong>dia 28 de Abril</strong>.</div>
+      <div class="scarcity-text">Começamos na <strong>terça-feira, 5 de Maio</strong>.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== CTA FINAL ========== -->
+<section class="section section--ink cta-dark">
+  <div class="container">
+    <div class="section-label">Próximo Passo</div>
+    <h1>Candidata-te.</h1>
+    <p style="margin-top:16px; max-width:540px; margin-left:auto; margin-right:auto;">
+      Se leste até aqui e sentes que a EBS pode ser para ti, candidata-te. Vou analisar a tua candidatura pessoalmente e entro em contacto contigo.
+    </p>
+    <div style="margin:40px 0 16px;">
+      <a class="btn btn--light" href="https://form.typeform.com/to/HHb8zGxw">Quero candidatar-me</a>
+    </div>
+    <p style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-soft);">Vagas limitadas por mês</p>
+  </div>
+</section>
+
+<!-- QUOTE FINAL -->
+<section class="section section--cream">
+  <div class="container" style="text-align:center;">
+    <div class="quote" style="border:none; padding:0; text-align:center; font-size:clamp(20px,3vw,26px);">
+      "Fazer até dar certo. É isto que eu faço. É isto que te vou ensinar."
+    </div>
+    <div class="signature">— Adriana Godinho</div>
+  </div>
+</section>
+
+<div class="flourish">·  ·  ·</div>
+
+<footer>
+  Event Business School &nbsp;·&nbsp; Adriana Godinho &nbsp;·&nbsp; 2026
+</footer>
+
+</body>
+</html>
