@@ -718,15 +718,7 @@
 <!-- ========== SCARCITY ========== -->
 <section class="section section--white">
   <div class="container">
-    <div class="scarcity">
-      <div class="scarcity-title">⚡ <span style="text-decoration: line-through; color: var(--grey); font-weight: 400;">5</span> 3 vagas apenas para Maio</div>
-      <div class="scarcity-text">Só abrimos um número limitado de vagas todos os meses.</div>
-      <div class="scarcity-text">As nossas portas estão abertas para candidaturas <strong>até sábado, 2 de Maio</strong>.</div>
-      <div class="scarcity-text">Começamos na <strong>terça-feira, 5 de Maio</strong>.</div>
-      <div class="scarcity-text" style="margin-top:14px;"><strong>Garante já a tua vaga:</strong></div>
-      <div class="scarcity-text">🔗 <a class="scarcity-link-inline" href="https://form.typeform.com/to/HHb8zGxw?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx#email=xxxxx">usa este link para garantires a tua vaga na turma</a>.</div>
-      <div class="scarcity-text">A equipa entra em contacto contigo no Clube Viver de Eventos para o Onboarding.</div>
-    </div>
+    <div class="scarcity" data-scarcity></div>
   </div>
 </section>
 
@@ -1220,15 +1212,7 @@
 <!-- ========== SCARCITY 2 ========== -->
 <section class="section section--white">
   <div class="container">
-    <div class="scarcity">
-      <div class="scarcity-title">⚡ <span style="text-decoration: line-through; color: var(--grey); font-weight: 400;">5</span> 3 vagas apenas para Maio</div>
-      <div class="scarcity-text">Só abrimos um número limitado de vagas todos os meses.</div>
-      <div class="scarcity-text">As nossas portas estão abertas para candidaturas <strong>até sábado, 2 de Maio</strong>.</div>
-      <div class="scarcity-text">Começamos na <strong>terça-feira, 5 de Maio</strong>.</div>
-      <div class="scarcity-text" style="margin-top:14px;"><strong>Garante já a tua vaga:</strong></div>
-      <div class="scarcity-text">🔗 <a class="scarcity-link-inline" href="https://form.typeform.com/to/HHb8zGxw?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx#email=xxxxx">usa este link para garantires a tua vaga na turma</a>.</div>
-      <div class="scarcity-text">A equipa entra em contacto contigo no Clube Viver de Eventos para o Onboarding.</div>
-    </div>
+    <div class="scarcity" data-scarcity></div>
   </div>
 </section>
 
@@ -1264,6 +1248,85 @@
   <img src="https://static.wixstatic.com/media/ab43f7_dcfcecfadc7a49aeaebdafc5710efd2b~mv2.png" alt="Event Business School" style="max-width:110px; height:auto; display:block; margin:0 auto 14px; opacity:0.85;">
   Adriana Godinho &nbsp;·&nbsp; 2026
 </footer>
+
+<script>
+/**
+ * Automação das caixas "5 vagas" / "Inscrições abrem"
+ * Regras:
+ *  - Abre na PENÚLTIMA terça-feira de cada mês
+ *  - Fecha 5 dias depois (domingo seguinte)
+ *  - Programa começa na PRIMEIRA terça-feira do mês seguinte
+ *  - Quando fechado, mostra a próxima abertura
+ */
+(function(){
+  var MESES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+  var DIAS = ['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
+  var TYPEFORM = 'https://form.typeform.com/to/HHb8zGxw?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx#email=xxxxx';
+
+  function fmt(d) { return DIAS[d.getDay()] + ', ' + d.getDate() + ' de ' + MESES[d.getMonth()]; }
+
+  function penultimateTuesday(y, m){
+    // m é 0-11; encontrar última terça e recuar 7 dias
+    var last = new Date(y, m+1, 0);
+    var d = new Date(last);
+    while (d.getDay() !== 2) d.setDate(d.getDate()-1);
+    d.setDate(d.getDate()-7);
+    return d;
+  }
+  function firstTuesday(y, m){
+    var d = new Date(y, m, 1);
+    while (d.getDay() !== 2) d.setDate(d.getDate()+1);
+    return d;
+  }
+
+  function getCycle(now){
+    var y = now.getFullYear(), m = now.getMonth();
+    var opens = penultimateTuesday(y, m);
+    var closes = new Date(opens); closes.setDate(opens.getDate()+5); closes.setHours(23,59,59,999);
+    var starts = firstTuesday(y, m+1);
+
+    if (now < opens){
+      // Antes de abrir este mês → mostra próximo ciclo (este)
+      return { state:'closed', opens:opens, starts:starts };
+    }
+    if (now <= closes){
+      // Aberto agora
+      return { state:'open', closes:closes, starts:starts };
+    }
+    // Já fechou → mostra próximo ciclo (mês seguinte)
+    var opensNext = penultimateTuesday(y, m+1);
+    var startsNext = firstTuesday(y, m+2);
+    return { state:'closed', opens:opensNext, starts:startsNext };
+  }
+
+  function render(){
+    var cycle = getCycle(new Date());
+    var html;
+    if (cycle.state === 'open'){
+      var mesStart = MESES[cycle.starts.getMonth()];
+      html = ''+
+        '<div class="scarcity-title">⚡ <span style="text-decoration:line-through; color:var(--grey); font-weight:400;">5</span> 3 vagas apenas para ' + mesStart + '</div>'+
+        '<div class="scarcity-text">Só abrimos um número limitado de vagas todos os meses.</div>'+
+        '<div class="scarcity-text">As nossas portas estão abertas para candidaturas <strong>até ' + fmt(cycle.closes) + '</strong>.</div>'+
+        '<div class="scarcity-text">Começamos na <strong>' + fmt(cycle.starts) + '</strong>.</div>'+
+        '<div class="scarcity-text" style="margin-top:14px;"><strong>Garante já a tua vaga:</strong></div>'+
+        '<div class="scarcity-text">🔗 <a class="scarcity-link-inline" href="' + TYPEFORM + '">usa este link para garantires a tua vaga na turma</a>.</div>'+
+        '<div class="scarcity-text">A equipa entra em contacto contigo no Clube Viver de Eventos para o Onboarding.</div>';
+    } else {
+      var mesStart2 = MESES[cycle.starts.getMonth()];
+      html = ''+
+        '<div class="scarcity-title">Vagas para ' + mesStart2 + '</div>'+
+        '<div class="scarcity-text">Só abrimos um número limitado de vagas todos os meses.</div>'+
+        '<div class="scarcity-text">As inscrições abrem na <strong>' + fmt(cycle.opens) + '</strong>.</div>'+
+        '<div class="scarcity-text">Começamos no dia <strong>' + fmt(cycle.starts) + '</strong>.</div>'+
+        '<div class="scarcity-text" style="margin-top:14px;">Fica atenta — quando as portas abrirem, são poucos dias.</div>';
+    }
+    var boxes = document.querySelectorAll('[data-scarcity]');
+    for (var i=0; i<boxes.length; i++) boxes[i].innerHTML = html;
+  }
+  render();
+})();
+</script>
 
 </body>
 </html>
