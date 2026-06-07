@@ -1418,6 +1418,7 @@
 (function(){
   var els = document.querySelectorAll('.reveal');
   var inIframe = false; try { inIframe = window.self !== window.top; } catch(e){ inIframe = true; }
+  if(inIframe){ document.documentElement.classList.add('in-iframe'); }
   if(inIframe || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     els.forEach(function(e){ e.classList.add('in'); }); return;
   }

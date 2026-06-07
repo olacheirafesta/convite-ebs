@@ -150,6 +150,7 @@ body.tom-escuro [data-swing]:not(.has-photo){
   position:relative; min-height:100svh; display:flex; flex-direction:column;
   color:#f4f1ec; overflow:hidden; background:var(--ink);
 }
+.in-iframe .hero{ min-height:auto; }
 .hero-img{ position:absolute; inset:0; z-index:0; }
 .hero-img img{ width:100%; height:100%; object-fit:cover; object-position:center 22%; }
 .hero-scrim{ position:absolute; inset:0; z-index:1;
