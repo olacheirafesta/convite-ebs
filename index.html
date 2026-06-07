@@ -1417,7 +1417,8 @@
 <script>
 (function(){
   var els = document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  var inIframe = false; try { inIframe = window.self !== window.top; } catch(e){ inIframe = true; }
+  if(inIframe || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     els.forEach(function(e){ e.classList.add('in'); }); return;
   }
   var io = new IntersectionObserver(function(entries){
@@ -1425,6 +1426,7 @@
       if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
     });
   }, { rootMargin:'0px 0px -8% 0px', threshold:0.1 });
+  setTimeout(function(){ els.forEach(function(e){ e.classList.add('in'); }); }, 2500);
   els.forEach(function(e){ io.observe(e); });
 })();
 </script>
