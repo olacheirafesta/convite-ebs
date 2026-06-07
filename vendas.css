@@ -90,7 +90,7 @@ body.tom-escuro [data-swing]:not(.has-photo){
 
 .lead{
   font-family:var(--serif); font-weight:400;
-  font-size:clamp(20px,2.3vw,30px); line-height:1.34; letter-spacing:.002em; margin:0;
+  font-size:clamp(16px,1.6vw,21px); line-height:1.4; letter-spacing:.002em; margin:0;
 }
 .body{
   font-family:var(--sans); font-weight:300;
@@ -98,7 +98,7 @@ body.tom-escuro [data-swing]:not(.has-photo){
 }
 .body + .body{ margin-top:1em; }
 .body strong{ font-weight:600; color:var(--ink); }
-.body.lg{ font-size:clamp(17px,1.4vw,21px); line-height:1.6; }
+.body.lg{ font-size:clamp(15px,1.1vw,18px); line-height:1.62; }
 
 .pull{
   font-family:var(--serif); font-style:italic; font-weight:500;
