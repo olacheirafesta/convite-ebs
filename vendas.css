@@ -385,6 +385,9 @@ body.hero-tipo .hero{ background:var(--ink); }
 }
 @media (max-width:560px){
   :root{ --sec-y:clamp(28px,4vh,44px); }
+  .hero-scrollcue{ display:none; }
+  .hero-title{ font-size:clamp(32px,8vw,48px) !important; }
+  .hero-mono img{ height:58px; margin:0; }
   .hero-meta{ gap:16px; }
   .hero-bottom{ gap:22px; }
   .btn{ padding:18px 28px; font-size:12px; }
