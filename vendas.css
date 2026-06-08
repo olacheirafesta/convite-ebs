@@ -387,6 +387,7 @@ body.hero-tipo .hero{ background:var(--ink); }
   :root{ --sec-y:clamp(28px,4vh,44px); }
   .hero-scrollcue{ display:none; }
   .hero-title{ font-size:clamp(32px,8vw,48px) !important; }
+  p.display{ font-size:clamp(23px,6vw,32px) !important; line-height:1.12 !important; }
   .hero-mono img{ height:58px; margin:0; }
   .hero-meta{ gap:16px; }
   .hero-bottom{ gap:22px; }
