@@ -382,16 +382,16 @@ body.hero-tipo .hero{ background:var(--ink); }
   .hero-format{ display:none; }
   .discover li{ grid-template-columns:1fr; gap:10px; }
   .discover .dn{ font-size:24px; }
+  .viver-grid{ grid-template-columns:1fr !important; min-height:0 !important; }
+  .viver-img{ height:clamp(260px,42vw,420px); }
+  .metodo-img{ order:2; margin-top:clamp(24px,4vw,40px); }
+  .metodo-list{ order:1; }
 }
 @media (max-width:560px){
   :root{ --sec-y:clamp(28px,4vh,44px); }
   .hero-scrollcue{ display:none; }
   .hero-title{ font-size:clamp(32px,8vw,48px) !important; }
   p.display{ font-size:clamp(23px,6vw,32px) !important; line-height:1.12 !important; }
-  .viver-grid{ grid-template-columns:1fr !important; min-height:0 !important; }
-  .viver-img{ height:clamp(300px,55vw,420px); }
-  .metodo-img{ order:2; margin-top:clamp(24px,5vw,40px); }
-  .metodo-list{ order:1; }
   .hero-mono img{ height:58px; margin:0; }
   .hero-meta{ gap:16px; }
   .hero-bottom{ gap:22px; }
