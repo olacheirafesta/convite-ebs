@@ -388,6 +388,8 @@ body.hero-tipo .hero{ background:var(--ink); }
   .hero-scrollcue{ display:none; }
   .hero-title{ font-size:clamp(32px,8vw,48px) !important; }
   p.display{ font-size:clamp(23px,6vw,32px) !important; line-height:1.12 !important; }
+  .viver-grid{ grid-template-columns:1fr !important; min-height:0 !important; }
+  .viver-img{ height:clamp(300px,55vw,420px); }
   .hero-mono img{ height:58px; margin:0; }
   .hero-meta{ gap:16px; }
   .hero-bottom{ gap:22px; }
