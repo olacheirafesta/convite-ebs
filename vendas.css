@@ -18,7 +18,7 @@
   --serif:"Playfair Display",Didot,"Bodoni MT","Times New Roman",serif;
   --maxw:1200px;
   --pad-x:clamp(22px,6vw,96px);
-  --sec-y:clamp(72px,11vh,168px);
+  --sec-y:clamp(46px,7vh,104px);
 }
 
 *{ box-sizing:border-box; }
