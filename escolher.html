@@ -24,8 +24,13 @@
   .opt .note{ font-family:var(--serif); font-style:italic; font-weight:400; font-size:clamp(15px,1.5vw,19px); color:rgba(255,255,255,.62); margin:clamp(16px,2vw,22px) 0 0; line-height:1.4; }
   .opt .spacer{ flex:1; }
   .opt .go{ display:inline-block; text-align:center; font-family:var(--sans); font-weight:600; font-size:13px; letter-spacing:.12em; text-transform:uppercase; padding:18px 28px; margin-top:clamp(26px,3.5vw,40px); border:1px solid #fff; }
-  .opt.solid .go{ background:#fff; color:var(--ink); }
-  .opt.solid .go:hover{ background:transparent; color:#fff; }
+  .opt.solid{ background:#fff; border-color:#fff; }
+  .opt.solid .tag{ color:rgba(18,17,16,.55); }
+  .opt.solid .amt{ color:var(--ink); }
+  .opt.solid .amt .per{ color:rgba(18,17,16,.6); }
+  .opt.solid .note{ color:rgba(18,17,16,.66); }
+  .opt.solid .go{ background:var(--ink); color:#fff; border-color:var(--ink); }
+  .opt.solid .go:hover{ background:transparent; color:var(--ink); }
   .opt.line .go{ background:transparent; color:#fff; }
   .opt.line .go:hover{ background:#fff; color:var(--ink); }
   .esc-foot{ text-align:center; font-family:var(--serif); font-style:italic; font-size:clamp(14px,1.3vw,17px); color:rgba(255,255,255,.5); margin-top:clamp(30px,5vh,52px); }
@@ -46,20 +51,20 @@
     <p class="esc-sub">O mesmo acesso completo à Event Business School™. Escolhe o ritmo de pagamento que faz sentido para ti.</p>
 
     <div class="esc-grid">
+      <div class="opt solid">
+        <p class="tag">A pronto · poupas €1.000</p>
+        <p class="amt"><span class="cur">€</span>5.000</p>
+        <p class="note">Pagas de uma vez e poupas €1.000 face às prestações. Ficas com o ano inteiro, sem mensalidades.</p>
+        <div class="spacer"></div>
+        <a class="go" href="#" data-link="integral">Pagar a pronto</a>
+      </div>
+
       <div class="opt line">
         <p class="tag">A prestações</p>
         <p class="amt"><span class="cur">€</span>500<span class="per">/mês</span></p>
         <p class="note">12 meses de acesso completo. Depois, continuamos mês a mês enquanto estiveres a crescer.</p>
         <div class="spacer"></div>
         <a class="go" href="#" data-link="prestacoes">Pagar a prestações</a>
-      </div>
-
-      <div class="opt solid">
-        <p class="tag">A pronto</p>
-        <p class="amt"><span class="cur">€</span>5.000</p>
-        <p class="note">Pagas de uma vez e ficas com o ano inteiro. Sem mensalidades.</p>
-        <div class="spacer"></div>
-        <a class="go" href="#" data-link="integral">Pagar a pronto</a>
       </div>
     </div>
 
